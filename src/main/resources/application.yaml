@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: linkedin-clone
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/linkedin_clone
+    username: root
+    password: root
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update   # create/update tables from entities; use "validate" in prod
+    show-sql: true       # log SQL in console (useful in dev)
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  profiles:
+    active: dev
+
+server:
+  servlet:
+    context-path: /api  

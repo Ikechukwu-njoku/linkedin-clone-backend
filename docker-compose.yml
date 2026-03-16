@@ -1,0 +1,17 @@
+# PostgreSQL for LinkedIn Clone (config from Docker Hub: hub.docker.com/_/postgres)
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    shm_size: 128mb
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: linkedin_clone
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
